@@ -15,6 +15,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #333;
             line-height: 1.6;
+            margin: 0;
         }
 
         /* Header Navigation */
@@ -60,11 +61,17 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #7a9b84 0%, #9d8ba8 100%);
-            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #7a9b84 0%, #4a5f9d 100%);
+            padding: 4rem 0;
             position: relative;
             overflow: hidden;
-            width: 100%;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            width: 100vw;
+            max-width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
         }
 
         .hero::before {
@@ -82,12 +89,14 @@
         .hero-content {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 2rem; 
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
             align-items: center;
             position: relative;
             z-index: 1;
+            width: 100%;
         }
 
         .hero-image {
@@ -162,7 +171,7 @@
         }
 
         .social-links a:hover {
-            background: #1a2550;
+            background: #5f7d68;
         }
 
         /* Section Styles */
@@ -170,6 +179,17 @@
             padding: 4rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
+        }
+        
+        section.hero,
+        section#skills,
+        section#experience,
+        section#education,
+        section#contact {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .section-title {
@@ -179,6 +199,175 @@
             margin-bottom: 3rem;
             letter-spacing: 3px;
             text-transform: uppercase;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skill-category {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: #7a9b84;
+        }
+
+        .skill-category h3 {
+            color: #7a9b84;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .skill-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-list li {
+            color: #666;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.95rem;
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        .skill-list li::before {
+            content: "▹";
+            color: #7a9b84;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-right: 0.5rem;
+        }
+
+        /* Experience Section */
+        .experience-item {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .experience-title h3 {
+            color: #7a9b84;
+            font-size: 1.3rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-title h4 {
+            color: #666;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .experience-date {
+            color: #7a9b84;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .experience-description {
+            color: #666;
+            line-height: 1.8;
+            margin-top: 1rem;
+        }
+
+        .experience-description ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .experience-description li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: #7a9b84;
+        }
+
+        .project-card h3 {
+            color: #7a9b84;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tech {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .project-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #7a9b84;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .project-link:hover {
+            background: #5f7d68;
         }
 
         /* Education Section */
@@ -307,7 +496,7 @@
         }
 
         .submit-btn:hover {
-            background: #1a2550;
+            background: #5f7d68;
         }
 
         .contact-info {
@@ -365,24 +554,38 @@
             .hero-info h1 {
                 font-size: 2rem;
             }
+
+            .experience-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .experience-date {
+                font-size: 0.95rem;
+            }
+
+            .projects-grid,
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">Simran Malhotra</div>
+            <a href="#hero" class="logo" style="text-decoration: none;">Simran Malhotra</a>
             <ul class="nav-links">
+                <li><a href="#skills">SKILLS</a></li>
                 <li><a href="#experience">EXPERIENCE</a></li>
                 <li><a href="#education">EDUCATION</a></li>
                 <li><a href="#projects">PROJECTS</a></li>
-                <li><a href="#skills">SKILLS</a></li>
                 <li><a href="#contact">CONTACT</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-content">
             <div class="hero-image">
                 <img src="https://via.placeholder.com/500x600/cccccc/666666?text=Your+Photo" alt="Simran Malhotra">
@@ -390,26 +593,6 @@
             <div class="hero-info">
                 <h1>Simran Malhotra</h1>
                 <h2>DEVELOPER</h2>
-                
-                <div class="info-item">
-                    <strong>Phone:</strong>
-                    <p>217-255-0103</p>
-                </div>
-                
-                <div class="info-item">
-                    <strong>Email:</strong>
-                    <p>malhotrasimran2000@gmail.com</p>
-                </div>
-                
-                <div class="info-item">
-                    <strong>Address:</strong>
-                    <p>306 E Clark Street<br>Champaign, Il 61820</p>
-                </div>
-                
-                <div class="info-item">
-                    <strong>Date of Birth:</strong>
-                    <p>January 9, 2000</p>
-                </div>
 
                 <div class="social-links">
                     <a href="#" aria-label="LinkedIn">in</a>
@@ -419,20 +602,101 @@
         </div>
     </section>
 
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Frontend</h3>
+                <ul class="skill-list">
+                    <li>HTML5 & CSS3</li>
+                    <li>JavaScript (ES6+)</li>
+                    <li>React.js</li>
+                    <li>Vue.js</li>
+                    <li>Tailwind CSS</li>
+                    <li>Responsive Design</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Backend</h3>
+                <ul class="skill-list">
+                    <li>Node.js</li>
+                    <li>Python</li>
+                    <li>PostgreSQL</li>
+                    <li>MongoDB</li>
+                    <li>REST APIs</li>
+                    <li>Firebase</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Tools & Others</h3>
+                <ul class="skill-list">
+                    <li>Git & GitHub</li>
+                    <li>Docker</li>
+                    <li>AWS</li>
+                    <li>CI/CD</li>
+                    <li>Agile/Scrum</li>
+                    <li>Testing (Jest, Mocha)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title">Experience</h2>
+        
+        <div class="experience-item">
+            <div class="experience-header">
+                <div class="experience-title">
+                    <h3>Software Engineer</h3>
+                    <h4>Company Name</h4>
+                </div>
+                <div class="experience-date">Jan 2023 - Present</div>
+            </div>
+            <div class="experience-description">
+                <ul>
+                    <li>Developed and maintained scalable web applications using React, Node.js, and PostgreSQL</li>
+                    <li>Collaborated with cross-functional teams to design and implement new features</li>
+                    <li>Improved application performance by 40% through code optimization and database indexing</li>
+                    <li>Mentored junior developers and conducted code reviews</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div class="experience-title">
+                    <h3>Junior Developer</h3>
+                    <h4>Previous Company</h4>
+                </div>
+                <div class="experience-date">Jun 2022 - Dec 2022</div>
+            </div>
+            <div class="experience-description">
+                <ul>
+                    <li>Built responsive user interfaces using HTML, CSS, and JavaScript</li>
+                    <li>Integrated RESTful APIs and implemented authentication systems</li>
+                    <li>Participated in agile development processes and daily stand-ups</li>
+                    <li>Wrote unit tests to ensure code quality and reliability</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <section id="education">
         <h2 class="section-title">Education</h2>
         
         <div class="timeline-item">
             <div class="timeline-date">
-                <div class="year">August 2024-December 2025</div>
+                <div class="year">Aug 2024-Dec 2025</div>
                 <div class="degree">Master's Degree</div>
             </div>
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-                <h3>UNIVERISTY OF ILLINOIS URBANA CHAMPAIGN</h3>
-                <p> Master of Computer Science (MCS); GPA: 4.0<br>
-                    Relevant Coursework: Data Mining, Software Engineering, Cloud Computing Applications, Database Systems, User-Centered Machine
-Learning, Text Mining & Large Language Models, LLM-Assisted Software Engineering
+                <h3>UNIVERSITY OF ILLINOIS URBANA CHAMPAIGN</h3>
+                <p><b>Master of Computer Science (MCS)</b>; GPA: 4.0<br>
+                    <b>Relevant Coursework:</b> Data Mining, Software Engineering, Cloud Computing Applications, Database Systems, User-Centered Machine Learning, Text Mining & Large Language Models, LLM-Assisted Software Engineering
                 </p>
             </div>
         </div>
@@ -444,8 +708,52 @@ Learning, Text Mining & Large Language Models, LLM-Assisted Software Engineering
             </div>
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-                <h3>Manipal Institute of Technology</h3>
-                <p>GPA: 3.93</p>
+                <h3>MANIPAL INSTITUTE OF TECHNOLOGY</h3>
+                <p><b>Bachelor of Technology in Computer Science & Engineering</b>; GPA: 3.93<br>
+                <b>Relevant Coursework:</b> Data Structures & Algorithms, Object Oriented Programming, Computer Networking, Big Data and Analytics
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>E-Commerce Platform</h3>
+                <div class="project-tech">React, Node.js, MongoDB, Stripe</div>
+                <p class="project-description">
+                    A full-stack e-commerce application with user authentication, product catalog, shopping cart, and payment integration. Implemented admin dashboard for inventory management.
+                </p>
+                <div class="project-links">
+                    <a href="#" class="project-link">Live Demo</a>
+                    <a href="#" class="project-link">GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Task Management App</h3>
+                <div class="project-tech">Vue.js, Firebase, Tailwind CSS</div>
+                <p class="project-description">
+                    Real-time collaborative task management tool with drag-and-drop functionality, notifications, and team collaboration features. Supports multiple projects and user roles.
+                </p>
+                <div class="project-links">
+                    <a href="#" class="project-link">Live Demo</a>
+                    <a href="#" class="project-link">GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Weather Dashboard</h3>
+                <div class="project-tech">JavaScript, API Integration, Chart.js</div>
+                <p class="project-description">
+                    Interactive weather dashboard displaying current conditions and forecasts with data visualizations. Features location search, favorite cities, and weather alerts.
+                </p>
+                <div class="project-links">
+                    <a href="#" class="project-link">Live Demo</a>
+                    <a href="#" class="project-link">GitHub</a>
+                </div>
             </div>
         </div>
     </section>
@@ -494,7 +802,7 @@ Learning, Text Mining & Large Language Models, LLM-Assisted Software Engineering
 
                 <div class="social-links">
                     <a href="#" aria-label="LinkedIn">in</a>
-                    <a href="#" aria-label="Github">f</a>
+                    <a href="#" aria-label="Github">github</a>
                 </div>
             </div>
         </div>
