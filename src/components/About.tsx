@@ -6,31 +6,31 @@ export function About() {
   const logos = [
     {
       name: 'AWS',
-      imagePath: '/src/assets/logos/AWS.png',
+      imagePath: '/assets/logos/AWS.png',
       alt: 'AWS',
       size: 'normal'
     },
     {
       name: 'Microsoft',
-      imagePath: '/src/assets/logos/Microsoft.jpg',
+      imagePath: '/assets/logos/Microsoft.jpg',
       alt: 'Microsoft',
       size: 'normal'
     },
     {
       name: 'UBS',
-      imagePath: '/src/assets/logos/UBS.png',
+      imagePath: '/assets/logos/UBS.png',
       alt: 'UBS',
       size: 'normal'
     },
     {
       name: 'University of Illinois',
-      imagePath: '/src/assets/logos/UIUC.jpeg',
+      imagePath: '/assets/logos/UIUC.jpeg',
       alt: 'UIUC',
       size: 'large'
     },
     {
       name: 'Manipal Institute of Technology',
-      imagePath: '/src/assets/logos/MIT.jpg',
+      imagePath: '/assets/logos/MIT.jpg',
       alt: 'MIT Manipal',
       size: 'large'
     }

@@ -1,5 +1,3 @@
-import image_28c9fa12e203abe5dd3133da9555276a1f3c168e from 'figma:asset/28c9fa12e203abe5dd3133da9555276a1f3c168e.png';
-import image_0b124891030edba0cc5bef30422588e365f21eab from 'figma:asset/0b124891030edba0cc5bef30422588e365f21eab.png';
 import { Github, Linkedin, Mail, ArrowDown } from 'lucide-react';
 import { Button } from './ui/button';
 
@@ -65,7 +63,7 @@ export function Hero() {
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-600 rounded-full blur-3xl opacity-30 animate-pulse"></div>
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-2xl">
                 <img
-                  src={image_28c9fa12e203abe5dd3133da9555276a1f3c168e}
+                  src={'/assets/28c9fa12e203abe5dd3133da9555276a1f3c168e.png'}
                   alt="Profile"
                   className="w-full h-full object-cover"
                 />

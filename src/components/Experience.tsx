@@ -27,7 +27,7 @@ export function Experience() {
       position: 'Data & AI Engineer',
       period: 'August 2025 – Present',
       images: [
-        '/src/assets/vethub/logo.png',
+        '/assets/vethub/logo.png',
       ],
       achievements: [
         'Designed and prototyped NL2SQL agent to translate natural language questions into SQL queries for agtech enterprise software',
@@ -42,9 +42,9 @@ export function Experience() {
       position: 'Data Engineer Intern (AWS Fintech)',
       period: 'May 2025 – Aug 2025',
       images: [
-        '/src/assets/aws/Amazon Intern Welcome.jpg',
-        '/src/assets/aws/IMG_0063.PNG',
-        '/src/assets/aws/Hackathon 25 Certificate - Simran Malhotra.png',
+        '/assets/aws/Amazon Intern Welcome.jpg',
+        '/assets/aws/IMG_0063.PNG',
+        '/assets/aws/Hackathon 25 Certificate - Simran Malhotra.png',
       ],
       achievements: [
         'Designed and developed a real-time data pipeline using AWS Flink to support headcount management and planning',
@@ -60,12 +60,12 @@ export function Experience() {
       position: 'Data & AI Technical Consultant',
       period: 'Aug 2022 – July 2024',
       images: [
-        '/src/assets/microsoft/IMG_1738.jpg',
-        '/src/assets/microsoft/IMG_1744.jpg',
-        '/src/assets/microsoft/1721466151541.jpeg',
-        '/src/assets/microsoft/IMG_1804.JPG',
-        '/src/assets/microsoft/1679060563443.jpg',
-        '/src/assets/microsoft/1721469586898.jpeg',
+        '/assets/microsoft/IMG_1738.jpg',
+        '/assets/microsoft/IMG_1744.jpg',
+        '/assets/microsoft/1721466151541.jpeg',
+        '/assets/microsoft/IMG_1804.JPG',
+        '/assets/microsoft/1679060563443.jpg',
+        '/assets/microsoft/1721469586898.jpeg',
       ],
       projects: [
         {
@@ -105,8 +105,8 @@ export function Experience() {
       position: 'Software Engineer Intern & Technology Intern',
       period: 'June 2021 – June 2022',
       images: [
-        '/src/assets/logos/ubs-logo.png',
-        '/src/assets/ubs/Certificate of Appreciation.png',
+        '/assets/logos/ubs-logo.png',
+        '/assets/ubs/Certificate of Appreciation.png',
       ],
       positions: [
         {
