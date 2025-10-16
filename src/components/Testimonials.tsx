@@ -83,10 +83,10 @@ export function Testimonials() {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section id="testimonials" className="py-20 bg-gradient-to-br from-purple-50 via-white to-indigo-50">
+    <section id="testimonials" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="mb-4 text-gray-900 text-[36px] font-bold">Testimonials</h2>
+          <h2 className="mb-4 text-indigo-600 text-[36px] font-bold">Testimonials</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Testimonials from colleagues, mentors, and collaborators I've had the privilege to work with
           </p>
@@ -94,7 +94,7 @@ export function Testimonials() {
 
         <div className="max-w-3xl mx-auto">
           <div className="relative group">
-            <div className="bg-white p-8 rounded-xl shadow-lg">
+            <div className="bg-gradient-to-r from-indigo-50 via-white to-purple-50 p-8 rounded-xl shadow-lg">
               <div className="mb-6">
                 <Quote className="text-indigo-200 mb-4" size={40} />
               </div>

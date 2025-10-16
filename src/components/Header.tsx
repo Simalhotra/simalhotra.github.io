@@ -35,7 +35,7 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/80 backdrop-blur-lg shadow-md' : 'bg-transparent'
+        isScrolled ? 'bg-background/80 backdrop-blur-lg shadow-md' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,7 +44,7 @@ export function Header() {
             className="cursor-pointer"
             onClick={() => scrollToSection('home')}
           >
-            <span className="text-indigo-600">Portfolio</span>
+            <span className="text-indigo-600">Simran Malhotra</span>
           </div>
 
           <nav className="hidden md:flex gap-8">
@@ -52,7 +52,7 @@ export function Header() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-gray-700 hover:text-indigo-600 transition-colors"
+                className="text-foreground hover:text-indigo-600 transition-colors"
               >
                 {item.label}
               </button>
@@ -60,7 +60,7 @@ export function Header() {
           </nav>
 
           <button
-            className="md:hidden text-gray-700"
+            className="md:hidden shadow-xl rounded-xl"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -75,7 +75,7 @@ export function Header() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-gray-700 hover:text-indigo-600 transition-colors text-left"
+                className="text-foreground hover:text-indigo-600 transition-colors text-left"
               >
                 {item.label}
               </button>

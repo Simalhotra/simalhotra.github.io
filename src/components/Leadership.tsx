@@ -45,10 +45,10 @@ export function Leadership() {
   ];
 
   return (
-    <section id="leadership" className="py-20 bg-white">
+    <section id="leadership" className="py-20 bg-background text-[var(--foreground)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="mb-4 text-gray-900 text-[36px] font-bold">Beyond the Code</h2>
+          <h2 className="mb-4 text-indigo-600 text-[36px] font-bold">Beyond the Code</h2>
         </div>
 
         <div className="space-y-8">

@@ -40,17 +40,17 @@ export function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-20 bg-background text-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="mb-4 text-gray-900 text-[36px] font-bold">Featured Projects</h2>
+          <h2 className="mb-4 text-indigo-600 text-[36px] font-bold">Featured Projects</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project) => (
             <div
               key={project.id}
-              className="group bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow"
+              className="group bg-gradient-to-r from-indigo-50 via-white to-purple-50 rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow"
             >
               <div className="relative overflow-hidden h-48">
                 <img

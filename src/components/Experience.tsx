@@ -161,10 +161,10 @@ export function Experience() {
   };
 
   return (
-    <section id="experience" className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+    <section id="experience" className="py-20 bg-background text-[var(--foreground)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="mb-4 text-gray-900 text-[36px] font-bold">Work Experience</h2>
+          <h2 className="mb-4 text-indigo-600 text-[36px] font-bold">Work Experience</h2>
         </div>
 
         <div className="space-y-8">
@@ -174,7 +174,7 @@ export function Experience() {
             return (
               <div
                 key={exp.company}
-                className="bg-white rounded-lg shadow-xl overflow-hidden"
+                className="bg-gradient-to-r from-indigo-50 via-white to-purple-50 rounded-lg shadow-xl overflow-hidden"
               >
                 <div className="grid md:grid-cols-3 gap-0">
                   {/* Image container adapts to text content height */}
