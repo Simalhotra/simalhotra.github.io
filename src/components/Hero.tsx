@@ -26,7 +26,7 @@ export function Hero() {
               Software Developer
             </h2>
             <p className="text-foreground mb-8 max-w-lg text-sm sm:text-base">
-              Passionate about AI-driven data solutions and scalable architectures that transform raw data into actionable insights.
+              Passionate about building AI-driven data solutions that transform raw data into actionable insights.
               Experienced in cloud technologies, data engineering, and software development.
             </p>
             <div className="flex flex-wrap gap-4 mb-8">
