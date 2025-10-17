@@ -10,26 +10,26 @@ export function Hero() {
   };
 
   const handleDownloadResume = () => {
-    const resumeUrl = 'https://drive.google.com/uc?export=download&id=1x-syFAX7nUYii7wrDIGl6vP8yU5NvnAr';
+    const resumeUrl = 'https://drive.google.com/file/d/1x-syFAX7nUYii7wrDIGl6vP8yU5NvnAr/view?usp=sharing';
     window.open(resumeUrl, '_blank');
   };
 
   return (
-<section id="home" className="min-h-screen flex items-center justify-center bg-background text-foreground pt-20">
-<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <section id="home" className="min-h-screen flex items-center justify-center bg-background text-foreground pt-20 overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-indigo-600 mb-4 text-5xl font-bold">
+          <div className="w-full">
+            <h1 className="text-indigo-600 mb-4 text-5xl font-bold break-words">
               Hello, I'm Simran!
             </h1>
-            <h2 className="mb-6 text-foreground">
+            <h2 className="mb-6 text-foreground text-xl sm:text-2xl">
               Software Developer
             </h2>
-            <p className="text-foreground mb-8 max-w-lg">
-              Passionate about building scalable data pipelines and AI-driven solutions.
-              Experienced in cloud technologies, data engineering, and machine learning applications.
+            <p className="text-foreground mb-8 max-w-lg text-sm sm:text-base">
+              Passionate about AI-driven data solutions and scalable architectures that transform raw data into actionable insights.
+              Experienced in cloud technologies, data engineering, and software development.
             </p>
-            <div className="flex gap-4 mb-8">
+            <div className="flex flex-wrap gap-4 mb-8">
               <Button onClick={handleDownloadResume} className="flex items-center gap-2">
                 <Download size={18} />
                 Download Resume
@@ -38,29 +38,43 @@ export function Hero() {
                 Contact Me
               </Button>
             </div>
-            <div className="flex gap-4">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-indigo-600 transition-colors">
+            <div className="flex gap-4 flex-wrap">
+              <a 
+                href="https://github.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-600 hover:text-indigo-600 transition-colors"
+              >
                 <Github size={24} />
               </a>
-              <a href="https://linkedin.com/in/simalhotra" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-indigo-600 transition-colors">
+              <a 
+                href="https://linkedin.com/in/simalhotra" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-600 hover:text-indigo-600 transition-colors"
+              >
                 <Linkedin size={24} />
               </a>
-              <a href="mailto:malhotrasimran2000@gmail.com" className="text-gray-600 hover:text-indigo-600 transition-colors">
+              <a 
+                href="mailto:malhotrasimran2000@gmail.com" 
+                className="text-gray-600 hover:text-indigo-600 transition-colors"
+              >
                 <Mail size={24} />
               </a>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative w-full">
             <div className="relative w-full aspect-square max-w-md mx-auto">
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-600 rounded-full blur-3xl opacity-30 animate-pulse"></div>
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-2xl">
-                <img src={'/assets/28c9fa12e203abe5dd3133da9555276a1f3c168e.png'} alt="Profile" className="w-full h-full object-cover" />
+                <img 
+                  src={'/assets/28c9fa12e203abe5dd3133da9555276a1f3c168e.png'} 
+                  alt="Profile" 
+                  className="w-full h-full object-cover" 
+                />
               </div>
             </div>
           </div>
-        </div>
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer animate-bounce" onClick={() => scrollToSection('about')}>
-          <ArrowDown size={32} className="text-indigo-600" />
         </div>
       </div>
     </section>

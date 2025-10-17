@@ -14,7 +14,15 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Message sent successfully! I\'ll get back to you soon.');
+
+    const mailtoLink = `mailto:malhotrasimran2000@gmail.com?subject=${encodeURIComponent(
+      formData.subject
+    )}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )}`;
+
+    window.location.href = mailtoLink;
+
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
@@ -33,7 +41,7 @@ export function Contact() {
       icon: MapPin,
       label: 'Location',
       value: 'Urbana-Champaign, IL',
-      link: '#',
+      link: '', // no link, renders a <div>
     },
   ];
 
@@ -46,23 +54,44 @@ export function Contact() {
 
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <h3 className="mb-6 text-gray-900">Contact Information</h3>
+            <h3 className="mb-6 text-foreground">Contact Information</h3>
             <div className="space-y-6">
-              {contactInfo.map((info) => (
-                <a
-                  key={info.label}
-                  href={info.link}
-                  className="flex items-center gap-4 p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow group"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <info.icon className="text-white" size={24} />
+              {contactInfo.map((info) =>
+                info.link ? (
+                  <a
+                    key={info.label}
+                    href={info.link}
+                    className="flex items-center gap-4 p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow group"
+                    aria-label={info.label}
+                    title={info.value}
+                    target={info.link.startsWith('http') ? '_blank' : undefined}
+                    rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  >
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <info.icon className="text-white" size={24} />
+                    </div>
+                    <div>
+                      <div className="text-gray-500">{info.label}</div>
+                      <div className="text-gray-900">{info.value}</div>
+                    </div>
+                  </a>
+                ) : (
+                  <div
+                    key={info.label}
+                    className="flex items-center gap-4 p-4 bg-white rounded-lg shadow group"
+                    aria-label={info.label}
+                    title={info.value}
+                  >
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <info.icon className="text-white" size={24} />
+                    </div>
+                    <div>
+                      <div className="text-gray-500">{info.label}</div>
+                      <div className="text-gray-900">{info.value}</div>
+                    </div>
                   </div>
-                  <div>
-                    <div className="text-gray-500">{info.label}</div>
-                    <div className="text-gray-900">{info.value}</div>
-                  </div>
-                </a>
-              ))}
+                )
+              )}
             </div>
           </div>
 
@@ -78,8 +107,9 @@ export function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Your name"
                     required
+                    autoComplete="name"
+                    style={{ color: 'black' }}
                   />
                 </div>
                 <div>
@@ -92,8 +122,9 @@ export function Contact() {
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="your.email@example.com"
                     required
+                    autoComplete="email"
+                    style={{ color: 'black' }}
                   />
                 </div>
                 <div>
@@ -105,8 +136,9 @@ export function Contact() {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    placeholder="Project inquiry"
                     required
+                    className="bg-input-background border-gray-300 text-black"
+                    style={{ color: 'black' }}
                   />
                 </div>
                 <div>
@@ -118,9 +150,10 @@ export function Contact() {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Tell me about your project..."
                     rows={5}
                     required
+                    className="bg-input-background border-gray-300 text-black"
+                    style={{ color: 'black' }}
                   />
                 </div>
                 <Button type="submit" className="w-full">

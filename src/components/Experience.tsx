@@ -30,16 +30,18 @@ export function Experience() {
         '/assets/vethub/logo.png',
       ],
       achievements: [
-        'Designed and prototyped NL2SQL agent to translate natural language questions into SQL queries for agtech enterprise software',
-        'Mapped relevant production health datasets by exploring table structures, column definitions, relationships, and data types via DBQuery',
-        'Provided insights for readiness reports on AI-driven query generation',
+        'Led use-case discovery to translate natural-language questions into concrete SQL intents and success metrics',
+        'Assessed data-warehouse readiness (schema completeness, naming consistency, SCD patterns), mapping tables/fields/joins to question types',
+        'Designed an NL2SQL architecture with RAG grounding (table/column docs, ERDs, metrics definitions) to constrain generation and cut schema hallucinations',
+        'Built a modular agent: intent parsing → RAG schema retrieval → SQL generation/auto-repair → natural-language explanations',
+        'Authored complex SQL queries and created detailed database schema documentation using retrieved metadata, documenting tables, fields, and interrelationships for both technical clarity and agent workflow optimization'
       ],
       color: '',
     },
     {
       company: 'Amazon Web Services (AWS)',
       location: 'Seattle, Washington',
-      position: 'Data Engineer Intern (AWS Fintech)',
+      position: 'Data Engineer Intern',
       period: 'May 2025 – Aug 2025',
       images: [
         '/assets/aws/Amazon Intern Welcome.jpg',
@@ -47,10 +49,12 @@ export function Experience() {
         '/assets/aws/Hackathon 25 Certificate - Simran Malhotra.png',
       ],
       achievements: [
-        'Designed and developed a real-time data pipeline using AWS Flink to support headcount management and planning',
-        'Implemented a streaming architecture to ingest data from DynamoDB into Apache Iceberg using a catch-based AWS Glue solution, with real-time metrics displayed via QuickSight dashboards',
-        'Reduced operational overhead and significantly accelerated delivery of actionable insights to customers by reducing data latency from 3 hours to about 30 seconds',
-        'Secured first place in AWS Fintech hackathon by building a multi-agent prototype using LangGraph for root-cause analysis',
+        'Designed and built a real-time data pipeline on AWS using Apache Flink that streams DynamoDB changes into Apache Iceberg tables,to support headcount management and planning',
+        'Replaced a batch-based AWS Glue workflow with a streaming architecture and exposed live metrics through Amazon QuickSight',
+        'Explored multiple architecture options, benchmarked trade-offs in cost, reliability, and scalability, and authored a comparative design document with a clear recommendation',
+        'Reduced end-to-end data latency from roughly 3 hours to about 30 seconds, accelerating decision-making and shortening feedback loops',
+        'Simplified operations and minimized cross-team dependencies by improving existing workflows',
+        'Won first place at the AWS Fintech Hackathon by building a LangGraph-based multi-agent prototype that automated root-cause analysis',
       ],
       color: '',
     },
@@ -60,8 +64,8 @@ export function Experience() {
       position: 'Data & AI Technical Consultant',
       period: 'Aug 2022 – July 2024',
       images: [
-        '/assets/microsoft/IMG_1738.jpg',
         '/assets/microsoft/IMG_1744.jpg',
+        '/assets/microsoft/IMG_1738.jpg',
         '/assets/microsoft/1721466151541.jpeg',
         '/assets/microsoft/IMG_1804.JPG',
         '/assets/microsoft/1679060563443.jpg',
@@ -113,17 +117,17 @@ export function Experience() {
           title: 'Software Engineer Intern',
           period: 'Jan 2022 – June 2022',
           achievements: [
-            'Developed a Python-based automation pipeline using Tanium API for quick and easy client onboarding to Loom,an AIOps log analytics tool.',
+            'Developed a Python-based automation pipeline using Tanium API for quick and easy client onboarding to Loom,an AIOps log analytics tool',
             'Reduced human effort by 90% and increased client onboarding rate',
-            'Spearheaded global product adoption, leveraging AIOps for proactive anomaly detection and faster IT incident resolution.'
+            'Spearheaded global product adoption, leveraging AIOps for proactive anomaly detection and faster IT incident resolution'
           ]
         },
         {
           title: 'Technology Intern',
           period: 'June 2021 – Aug 2021',
           achievements: [
-            'Trained the AI engine of Loom, an AIOps-powered log analytics tool, to analyze log patterns and perform correlation analysis, enhancing predictive insights and root cause identification for IT incidents.',
-            'Engineered and deployed cloud infrastructure using Terraform and Azure DevOps to streamline deployment processes and improve scalability.',
+            'Trained the AI engine of Loom, an AIOps-powered log analytics tool, to analyze log patterns and perform correlation analysis, enhancing predictive insights and root cause identification for IT incidents',
+            'Engineered and deployed cloud infrastructure using Terraform and Azure DevOps to streamline deployment processes and improve scalability',
           ]
         },
       ],
@@ -248,7 +252,7 @@ export function Experience() {
                                   key={pointIdx}
                                   className="flex items-start gap-2 text-gray-600 text-sm"
                                 >
-                                  <span className="text-indigo-600 mt-0.5 flex-shrink-0">•</span>
+                                  <span className="text-indigo-600 mt-0.5 flex-shrink-0">▹</span>
                                   <span>{point}</span>
                                 </li>
                               ))}

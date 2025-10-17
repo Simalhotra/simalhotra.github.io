@@ -1,18 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -33,56 +23,69 @@ export function Header() {
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/80 backdrop-blur-lg shadow-md' : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          <div
-            className="cursor-pointer"
-            onClick={() => scrollToSection('home')}
-          >
-            <span className="text-indigo-600">Simran Malhotra</span>
+    <>
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background shadow-md">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
+            {/* Logo */}
+            <div
+              className="cursor-pointer text-primary font-bold text-xl"
+              onClick={() => scrollToSection('home')}
+            >
+              Simran Malhotra
+            </div>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex gap-8">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="text-foreground hover:text-primary transition-colors font-medium"
+                >
+                  {item.label}
+                </button>
+              ))}
+            </nav>
+
+            {/* Mobile Menu Toggle */}
+            <button
+              className="md:hidden text-foreground hover:text-primary transition-colors p-2"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
           </div>
-
-          <nav className="hidden md:flex gap-8">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-foreground hover:text-indigo-600 transition-colors"
-              >
-                {item.label}
-              </button>
-            ))}
-          </nav>
-
-          <button
-            className="md:hidden shadow-xl rounded-xl"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
-      </div>
 
+        {/* Mobile Navigation */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-card border-t border-border absolute top-full left-0 right-0 z-50 shadow-2xl">
+            <nav className="flex flex-col py-2">
+              {navItems.map((item, index) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`text-foreground hover:text-primary hover:bg-accent transition-all text-left px-6 py-4 text-lg font-medium ${
+                    index !== navItems.length - 1 ? 'border-b border-border/50' : ''
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </nav>
+          </div>
+        )}
+      </header>
+
+      {/* Mobile Menu Backdrop */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t">
-          <nav className="flex flex-col px-4 py-4 gap-4">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-foreground hover:text-indigo-600 transition-colors text-left"
-              >
-                {item.label}
-              </button>
-            ))}
-          </nav>
-        </div>
+        <div
+          className="fixed inset-0 bg-black/80 z-40 md:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
       )}
-    </header>
+    </>
   );
 }
