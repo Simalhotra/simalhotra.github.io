@@ -10,9 +10,10 @@ export function Hero() {
   };
 
   const handleDownloadResume = () => {
-    const resumeUrl = 'https://drive.google.com/file/d/1x-syFAX7nUYii7wrDIGl6vP8yU5NvnAr/view?usp=sharing';
+    const resumeUrl = 'https://drive.google.com/file/d/1GwC0Al0C04ZJO3nLtd3RAkbHhVpodCF8/view?usp=sharing';
     window.open(resumeUrl, '_blank');
   };
+  
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-background text-foreground pt-20 overflow-x-hidden">
