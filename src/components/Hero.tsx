@@ -13,7 +13,6 @@ export function Hero() {
     const resumeUrl = 'https://drive.google.com/file/d/1GwC0Al0C04ZJO3nLtd3RAkbHhVpodCF8/view?usp=sharing';
     window.open(resumeUrl, '_blank');
   };
-  
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-background text-foreground pt-20 overflow-x-hidden">
@@ -27,7 +26,7 @@ export function Hero() {
               Software Developer
             </h2>
             <p className="text-foreground mb-8 max-w-lg text-sm sm:text-base">
-              Passionate about building AI-driven data solutions that transform raw data into actionable insights.
+              Passionate about building AI-driven data solutions.
               Experienced in cloud technologies, data engineering, and software development.
             </p>
             <div className="flex flex-wrap gap-4 mb-8">
